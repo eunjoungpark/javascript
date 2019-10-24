@@ -1,11 +1,11 @@
-#ES6
+# ES6
 
-##let와 const
+## let와 const
 - 블록범위에서 유효한 변수 선언 키워드
 - 전역에 let이나 const로 `window객체` 프로퍼티와 동일한 변수명을 사용하면, `window객체` 프로퍼티에 영향을 주지 않고 임시로 사용한다는 개념으로 변수를 선언할 수 있음.
 *(var로 `window` 프로퍼티와 동일한 변수명으로 선언시, window 프로퍼티 값을 덮음)*
 
-###let
+### let
 \- 같은 블록범위 내에서 이미 선언된 동일한 변수명은 선언할 수 없음.
 \- hoisting이 발생하지 않아, 선언전에 변수명을 호출할 경우 오류발생.
 \- 반복문 문제해결
@@ -19,13 +19,13 @@ var button = document.querySelectorAll("button");
     }
 ```
 
-###const
+### const
 \- 초기 선언시에 무조건 값을 할당하여 선언해야 함.
 \- 한번 선언된 변수는 값을 변경할 수 없음.
 \- 배열이나 객체는 참조값을 갖기 때문에 값 변경가능.
 \- for-in과 for-of는 반복 실행 시마다 새로운 바인딩을 만듬. 즉, for(const fruit in fruits){}는 오류가 발생되지 않음.
 
-##문자열 메서드
+## 문자열 메서드
 정규표현식 사용불가
 
 |메서드|의미|
@@ -35,7 +35,7 @@ var button = document.querySelectorAll("button");
 |`endsWith()`|문자열의 끝에서 주어진 문자를 찾으면 true를 반환|
 |`repeat()`|원본 문자열을 명시한 횟수만큼 반복하여 새로운 문자열 반환|
 
-##문자열 문법
+## 문자열 문법
 \- 백틱(`)으로 멀티라인 문자열 표현.
 \- 치환자 ${} : 백틱 영역안에서 변수 사용 가능.
 \- 템플릿 태그
@@ -50,8 +50,8 @@ function tag (test, ...test2){
 }
 ```
 
-##함수
-###인수에 기본값 설정
+## 함수
+### 인수에 기본값 설정
 - 인수의 기본값으로 숫자선언가능
 - 수식가능
 - 첫번째 인수 선언가능
@@ -88,7 +88,7 @@ fn(10, 20); //전달된 인자 수에 따라 argruments 수가 정해짐.
 fn(10); //전달된 인자 수가 1개이므로 arguments[1]은 undefined가 됨.
 ```
 
-###name 속성
+### name 속성
 ```javascript
 function doSomething(){}
 var doAnotherThing = function(){}
@@ -96,7 +96,7 @@ console.log(doSomething.name); //"doSomething"
 console.log(doAnotherThing.name); //"doAnotherThing"
 ```
 
-##화살표함수
+## 화살표함수
 - 함수의 축약법
 - 일반 function함수와 달리 호이스팅이 발생하지 않음.
 - 생성자가 없어, new키워드 사용할 수 없음.
@@ -159,7 +159,7 @@ var obj = {
 
 obj.fn();
 ```
-##객체 리터럴
+## 객체 리터럴
 - 프로퍼티 초기자 축약
 
 ```javascript
@@ -265,7 +265,7 @@ console.log(receiver.name); // "file.js"
 - 객체속성 열거 
 Object.getOwnPropertyNames(object name);
 
-##구조분해
+## 구조분해
 - 배열
 
 ```javascript
@@ -332,7 +332,7 @@ console.log(localStart.line); //1
 console.log(localStart.column); //1
 ```
 
-##Symbol
+## Symbol
 - 원시데이터형 (유형 : string, number, boolean, null, undefined, symbol)
 - new 생성자 키워드를 지원하지 않음.
 - 생성방법
@@ -391,8 +391,8 @@ console.log(symbol + 1); //에러!
 Object.getOwnPropertySymbols(object name);
 
 
-##Set & Weak Set
-###Set
+## Set & Weak Set
+### Set
 - 배열 데이터를 저장함.
 - 중복을 제거함.
 - 키값이 없음.
@@ -414,7 +414,7 @@ set.forEach(function(value, value, setArray){
 });
 ```
 
-###Weak Set
+### Weak Set
 - 약한 Set
 - 객체형 값만 받을 수 있음(가비지 컬렉터가 발생될 수 있는 유형에 적합).
 - 이터러블이 아니므로 for-of 사용불가
@@ -431,8 +431,8 @@ let weakset = new WeakSet([key1]); //배열형태로 객체값을 초기화.
 console.log(weakset.has(key1)); //true
 ```
 
-##Map & Weak Map
-###Map
+## Map & Weak Map
+### Map
 - 키와 값이 한쌍인 컬렉션임.
 - 메서드 종류
     - set(key, value) : 값 추가
@@ -443,7 +443,7 @@ console.log(weakset.has(key1)); //true
     - size : 요소가 몇 개인지 반환.
     - forEach(function(value,key,map){}, this) : map의 요소를 순회. 두번째 인자로 this사용 가능.
 
-###Weak Map
+### Weak Map
 - 약한 Map
 - 모든 키가 객체여야 함.
 - Weak Map은 DOM 요소의 객체를 만들때 적합.
@@ -460,16 +460,16 @@ let weakmap = new WeakMap([key1,"key1Value"]); //배열형태로 객체값을 �
 console.log(weakmap.get(key1)); //"key1Value"
 ```
 
-##일반 배열의 forEach
+## 일반 배열의 forEach
 일반 배열문은 forEach(function(value, index, array){}, this)의
 인수를 갖음.
 
-##이터레이터
+## 이터레이터
 반복을 설계하기 위한 객체
 - 메서드
     - next() : 반복가능한 값을 순회하여 {value:value, done: false or true} 객체를 반환. 마지막 값 이후에 {value:undefined, done:true}를 반환.
 
-##제네레이터
+## 제네레이터
 이터레이터를 반화하는 함수, return과 같이 반환해주는 yield문을 사용.
 함수를 종료시키는 return과 다르게 이터레이터의 값을 하나씩 반환하고, 다음 next()문이 호출될 때까지 대기함.
 
@@ -486,7 +486,7 @@ console.log(eun.next()); //{value: 3, done: false}
 console.log(eun.next()); //{value: undefined, done: true}
 ```
 
-##이터러블
+## 이터러블
 - Symbol.iterator 프로퍼티를 갖는 객체.
 - ES6에 Array, Set, Map, 문자열은 이터러블임.
 - 이터러블은 for-of와 함께 사용되도록 설계됨.
@@ -517,7 +517,7 @@ for(let x of collection){
 //3
 ```
 
-##내장 이터레이터
+## 내장 이터레이터
 - entries() : 값으로 키와 값을 갖는 이터레이터 반환
 - values() : 값으로 값을 갖는 이터레이터 반환.
 - keys() : 값으로 키를 갖는 이터레이터 반환.
@@ -572,8 +572,8 @@ let person = new class {
 }("Nicholas");
 
 person.sayName(); //"Nicholas"
-```
-###파생클래스
+``` 
+### 파생클래스
 - 파생클래스에서 constructor를 명시하려면 반드시 super()를 사용해야함.
 - 파생클래스에서만 super를 사용할 수 있음.
 - 생성자안에서 this를 접근하기 전에 super를 먼저 호출해야 함.
@@ -608,7 +608,7 @@ person.sayName(); //"Nicholas"
     }
 ```
 
-##배열
+## 배열
 - Array.of() : new Array(2) 와 같이 한 개의 숫자 인수로 생성자를 호출하면, 이것은 요소가 되지 못하고 배열의 길이가 됨.
 이 문제를 해결하기 위해 Array.of(2) 로 해결할 수 있고 예측가능 한 연산을 수행함.
 - Array.from() : 유사배열을(객체)를 배열처리 사용하고자 할때 사용.
